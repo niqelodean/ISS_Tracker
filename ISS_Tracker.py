@@ -1,5 +1,7 @@
 import requests
 import time
+from datetime import datetime, timezone
+
 
 WEBHOOK_URL = ('Your_Discord_Webhook_URL')
 INTERVAL = 7200
@@ -14,9 +16,14 @@ def get_iss_location():
 
     return latitude, longitude, timestamp
 
+def timestamp_to_local_datetime(timestamp):
+    from datetime import datetime, timezone
+    local_dt = datetime.fromtimestamp(timestamp, tz=timezone.utc).astimezone() 
+    return local_dt.strftime('%b %d, %Y at %I:%M %p')
+
 def send_iss_location_to_discord(latitude, longitude, timestamp):
     message = {
-        "content": f"Current ISS Location:\nLatitude: {latitude}\nLongitude: {longitude}\nTimestamp: {timestamp}"
+        "content": f"Current ISS Location:\nLatitude: {latitude}\nLongitude: {longitude}\nTimestamp: {timestamp_to_local_datetime(timestamp)}"
     }
     requests.post(WEBHOOK_URL, json=message)
 
