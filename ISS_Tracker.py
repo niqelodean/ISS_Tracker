@@ -1,8 +1,7 @@
 import requests
 import time
-import os
 
-WEBHOOK_URL = os.getenv('WEBHOOK_URL')
+WEBHOOK_URL = ('Your_Discord_Webhook_URL')
 INTERVAL = 7200
 
 def get_iss_location():
