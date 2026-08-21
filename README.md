@@ -1,6 +1,3 @@
-# ISS_Tracker
-Tracks the space station and shouts at your Discord every 2 hours
-
 # ISS Tracker
 
 A simple Python script that fetches the real-time location of the International Space Station (ISS) and posts it to Discord every 2 hours.
