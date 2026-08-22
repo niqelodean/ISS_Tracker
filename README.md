@@ -14,10 +14,10 @@ A Python script that fetches the real-time location of the International Space S
 ## Example Discord Output
 
 ```
-🛰️ ISS Current Location
-📍 Paris
-🌐 Lat: 48.8566, Lon: 2.3522
-⏰ Aug 22, 2024 at 04:19 PM
+ ISS Current Location
+ Paris
+ Lat: 48.8566, Lon: 2.3522
+ Aug 22, 2024 at 04:19 PM
 ```
 
 ## What I Learned
