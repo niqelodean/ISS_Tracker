@@ -53,7 +53,7 @@ def send_iss_location_to_discord(latitude, longitude, timestamp):
         "content":  f"Current ISS Location: {location_name}\n"
                     f'Latitude: {latitude}\n'
                     f'Longitude: {longitude}\n'
-                    f'Timestamp: {unic_timestamp_to_am_pm_format(timestamp)}'
+                    f'Timestamp: {unix_timestamp_to_am_pm_format(timestamp)}'
     }
     requests.post(WEBHOOK_URL, json=message)
 
