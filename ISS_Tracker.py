@@ -15,7 +15,7 @@ def get_iss_location():
 
     return latitude, longitude, timestamp
 
-def get_location_name (latitude, longitude):
+def get_location_name(latitude, longitude):
     url = "https://nominatim.openstreetmap.org/reverse"
     parameters = {
         'lat' : latitude,
@@ -43,7 +43,7 @@ def get_location_name (latitude, longitude):
     
     return location
 
-def unic_timestamp_to_am_pm_format(timestamp):
+def unix_timestamp_to_am_pm_format(timestamp):
     local_dt = datetime.fromtimestamp(timestamp, tz=timezone.utc).astimezone() 
     return local_dt.strftime('%b %d, %Y at %I:%M %p')
     
