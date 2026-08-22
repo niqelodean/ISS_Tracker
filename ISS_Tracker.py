@@ -2,7 +2,6 @@ import requests
 import time
 from datetime import datetime, timezone
 
-
 WEBHOOK_URL = ('Your_Discord_Webhook_URL')
 INTERVAL = 7200
 
@@ -16,7 +15,7 @@ def get_iss_location():
 
     return latitude, longitude, timestamp
 
-def  get_location_name (latitude, longitude):
+def get_location_name (latitude, longitude):
     url = "https://nominatim.openstreetmap.org/reverse"
     parameters = {
         'lat' : latitude,
@@ -44,7 +43,7 @@ def  get_location_name (latitude, longitude):
     
     return location
 
-def timestamp_to_local_datetime(timestamp):
+def unic_timestamp_to_am_pm_format(timestamp):
     local_dt = datetime.fromtimestamp(timestamp, tz=timezone.utc).astimezone() 
     return local_dt.strftime('%b %d, %Y at %I:%M %p')
     
